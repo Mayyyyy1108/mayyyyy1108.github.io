@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>5 Teman IKMI</title>
+  </head>
+  <body>
+    <h1>5 Teman IKMI</h1>
+    <div class="tabel">
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Aksi</th>
+      </tr>
+      <tr id="row__1">
+        <td>1</td>
+        <td class="data_teman">Ani Lestari</td>
+        <td class="data_teman">Cirebon</td>
+        <td class="hapus" id="hapus__1">Delete</td>
+      </tr>
+      <tr id="row__2">
+        <td>2</td>
+        <td class="data_teman">Dr Cahya Musliha Pab</td>
+        <td class="data_teman">Cirebon</td>
+        <td class="hapus" id="hapus__2">Delete</td>
+      </tr>
+      <tr id="row__3">
+        <td>3</td>
+        <td class="data_teman">Rezky Catur Bunga Naya</td>
+        <td class="data_teman">Cirebon</td>
+        <td class="hapus" id="hapus__3">Delete</td>
+      </tr>
+      <tr id="row__4">
+        <td>4</td>
+        <td class="data_teman">Suci Fidianti</td>
+        <td class="data_teman">Cirebon</td>
+        <td class="hapus" id="hapus__4">Delete</td>
+      </tr>
+      <tr id="row__5">
+        <td>5</td>
+        <td class="data_teman">Vera Apitasarie</td>
+        <td class="data_teman">Cirebon</td>
+        <td class="hapus" id="hapus__5">Delete</td>
+      </tr>
+    </table>
+    <br>
+    <br>
+</div>
+<a onclick="alert('Kembali ke halaman utama ?')" href="../index.html" class="tombol">Homepage</a>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+   
+   <script>
+      $(document).ready(function(){
+        $('.data_teman').click(function(){
+          let ubah = $(this).text();
+
+          let ubah2 = prompt('Ubah dengan:', ubah);
+          if(!ubah2) return;
+          $(this).text(ubah2);
+
+        })
+      })
+
+    
+        $('.hapus').click(function(){
+        let yakin = confirm('Mau Menghapus Data Ini ?');
+          
+        if(!yakin) return;
+
+        let id = $(this).prop('id');
+       // alert(id);
+
+       
+
+       let rid = id.split('__');
+       let baris_ke = rid[1];
+
+       $('#row__'+baris_ke).fadeOut()
+        })
+
+    </script>
+    
+  </body>
+</html>
+
+
