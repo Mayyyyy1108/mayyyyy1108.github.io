@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color:#7D9D9C;
+        }
+        .menu .on{
+            font-weight: bold;
+        }
+        .deskripsi{
+            background-color: #F0EBE3;
+            display: none;
+            box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            
+        }
+        .deskripsi-menu{
+            margin: 0 auto;
+            width: 1000px;
+        }
+        
+        .menu{
+            position: fixed;
+            background-color: #576F72;
+            top: 10px;
+            border-radius: 20px;
+            left: 10px;
+            right: 10px;
+            transition: all 0.1s ease-in-out;
+            box-shadow:1px 1px 10px;
+            z-index: 99;
+        }
+        .menu .deskripsi-menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-radius: 20px;
+            transition: all 0.1s ease-in-out;
+        }
+        
+        .menu ul{
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .menu a{
+            color: #F0EBE3;
+            text-decoration: none;
+            padding: 7px 15px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .menu a:hover{
+            color: black;
+        }
+        
+        .tulisan{
+            color: black;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        </style>
+
+    <nav class="menu">
+    <div class="deskripsi-menu">
+    <span class="tulisan"><a href="../index.html">May She Diva Puspita</a></span>
+      <ul>
+       <li class="on" id="nav_deskripsi1"><a href="#" style="font-size: 25px;">Home</a></li>
+       <li class="off" id="nav_deskripsi2"><a href="#" style="font-size: 25px;">Produk</a></li>
+       <li class="off" id="nav_deskripsi3"><a href="#" style="font-size: 25px;">Layanan</a></li>
+       <li class="off" id="nav_deskripsi4"><a href="#" style="font-size: 25px;">Tentang</a></li>
+       <li class="off" id="nav_deskripsi5"><a href="#" style="font-size: 25px;">Kontak</a></li>
+
+      </ul>
+     </div>
+    </nav><br><br><br>
+
+    <div class="deskripsi" id="deskripsi1">
+      <br>
+      <h2>Menu Home</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+    <div class="deskripsi" id="deskripsi2">
+        <br>
+      <h2>Menu Produk</h2>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>   
+    </div>
+    <div class="deskripsi" id="deskripsi3">
+        <br>
+      <h2>Menu Layanan</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>   
+    </div>
+    <div class="deskripsi" id="deskripsi4">
+        <br>
+      <h2>Menu Tentang</h2>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>   
+    </div>
+    <div class="deskripsi" id="deskripsi5">
+        <br>
+      <h2>Menu Kontak</h2>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>   
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+$(document).ready(function() {
+    $("nav ul li a").click(function(){
+        $(".deskripsi").slideToggle("slow");
+
+	$('nav ul li.off').each(function(index, el) {
+		var deskripsiID = el.id.split('_')[1];
+		$('.deskripsi#' + deskripsiID).hide();
+	});
+});
+
+$('nav').delegate('.off', 'click', function(event) {
+	var menu = this.id.split('_')[1];
+	console.log(menu);
+	document.location.hash = menu;
+
+	$('.deskripsi:visible').fadeOut('slow', function() {
+		$('.deskripsi#' + menu).slideDown('slow');
+	});
+
+	var $this = $(this);
+	$this.removeClass('off').addClass("on");
+    $this.siblings().addClass('off').removeClass('on');
+
+    });
+});
+    </script>
+</body>
+
+</html>
