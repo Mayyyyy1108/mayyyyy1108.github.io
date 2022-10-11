@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile May</title>
+    </head>
+    <body>
+        <style>
+html{
+	background-color: #7D9D9C;
+    font-family:'Helvatica';
+}
+
+.kartu{
+	margin-right: auto;
+    margin-top: 1cm;
+	margin-left: auto;
+    width: 800px;
+}
+.profile{
+	background-color: mintcream;
+    align-content: center;
+	text-align: center;
+	border-radius: 5px 5px 0 0;
+    font-size: 45px;
+    padding: 5px 10px 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.menu ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+.menu a{
+    color: #F0EBE3;
+    text-decoration: none;
+ }
+
+ .on{
+    font-weight: bold;
+}
+.menu{
+    background-color: #576F72;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.menu a:hover{
+    letter-spacing: 5px;
+    color: black;
+}
+
+.deskripsi{
+    background-color: mintcream;
+    display: none;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    margin-left: 0px;
+    
+}
+.deskripsi-menu{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+    
+img {
+    width: 200px;  
+    height: 250px;   
+    border-radius: 10%;
+    box-shadow: 2px darkslategrey;
+    padding: 5px;
+    transition: .2s;
+    transform: (1.2);
+}
+
+img:hover{
+transform: scale(1.2);
+opacity:100% ;
+box-shadow: 1px 1px 6px darkolivegreen;
+}
+
+
+
+
+@media only screen and (max-width: 800px){
+        .kartu{
+            width: 100%;
+        }
+    }
+        </style>
+    <div class="kartu">
+        <div class="profile">My Profile</div>
+        <nav class="menu">
+      <ul>
+       <li class="on" id="nav_deskripsi1"><a href="#" style="font-size: 25px;">Profile</a></li>  &nbsp; &nbsp; &nbsp; &nbsp;
+       <li class="off" id="nav_deskripsi2"><a href="#"style="font-size: 25px;">Tugas</a></li> &nbsp; &nbsp; &nbsp; &nbsp;
+       <li class="off" id="nav_deskripsi3"><a href="#"style="font-size: 25px;">Kontak</a></li>&nbsp; &nbsp; &nbsp; &nbsp;
+    
+      </ul></nav>
+        <div class="deskripsi" id="deskripsi1">
+
+        <a href="https://www.instagram.com/myshe.e/">
+            <center><img src="6.jpg" alt="Ini adalah gambar"></a>
+                <h3>May She Diva Puspita</h3>
+                <h3> 43210032 </h3>
+                <h3>Sistem Informasi</h3>
+            </center></div>
+
+        <div class="deskripsi" id="deskripsi2" style="display: none;">
+
+            <ul>
+                <li style="list-style-type: decimal;"><a href="p03/tabel.html" style="font-size: 15px;">P03 HTML Table Sederhana</a></li>  
+                <li style="list-style-type: decimal;"><a href="p03css/tabel2.html"style="font-size: 15px;">P03 HTML Table CSS</a></li> 
+                <li style="list-style-type: decimal;"><a href="p03jquery/tabel3.html"style="font-size: 15px;">P03 HTML Table JQuery Challenge</a></li>
+                <li style="list-style-type: decimal;"><a href="p03form-lv1/form1.html" style="font-size: 15px;">P03 Formulir Level #1 Basic HTML Form</a></li>  
+                <li style="list-style-type: decimal;"><a href="p04css-basic/form2.html" style="font-size: 15px;">P04 Formulir Level #2 Basic-CSS HTML Form</a></li>  
+                <li style="list-style-type: decimal;"><a href="p05/p05-jquery-delete.html" style="font-size: 15px;">P05 JQuery FadeOut When Delete</a></li>  
+                <li style="list-style-type: decimal;"><a href="p04/kop_surat.html" style="font-size: 15px;">P04 Kop Surat Static using CSS</a></li> 
+                <li style="list-style-type: decimal;"><a href="p05/p05-jquery-sliding.html" style="font-size: 15px;">P05 JQuery Sliding</a></li> 
+                <li style="list-style-type: decimal;"><a href="p06/p06-spa-menu.html" style="font-size: 15px;">P06 JQuery Add/Remove Class for SPA Menu</a></li> 
+               </ul>
+        
+        </div> 
+        <div class="deskripsi" id="deskripsi3" style="display: none;">
+            <h4 style="text-align: left;">Email: <a href="mailto:mayshe.diva153@gmail.com">mayshe.diva153@gmail.com</a>.</h4>
+            <h4 style="text-align: left;">Instagram: <a href="https://instagram.com/myshe.e/">@myshe.e</a>.</h4>
+        </div> 
+    </div>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("nav ul li a").click(function(){
+                $(".deskripsi").slideToggle("slow");
+        
+                $('nav ul li.off').each(function(index, el) {
+                    var deskripsiID = el.id.split('_')[1];
+                    $('.deskripsi#' + deskripsiID).hide();
+                });
+            });
+            
+            $('nav').delegate('.off', 'click', function(event) {
+                var menu = this.id.split('_')[1];
+                document.location.hash = menu;
+            
+                $('.deskripsi:visible').fadeOut('slow', function() {
+                    $('.deskripsi#' + menu).slideDown('slow');
+                });
+            
+                var $this = $(this);
+                $this.removeClass('off').addClass("on");
+                $this.siblings().addClass('off').removeClass('on');
+            
+            });
+
+            $('#nav_deskripsi1 a').trigger('click');
+        });
+            </script>
+    </html>
