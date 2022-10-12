@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="eng">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulir PMB 2</title>
 </head>
-
 <body>
 <style>
+
 body {
     background-color: #7D9D9C;
 }
@@ -38,30 +37,31 @@ h3 {
     background-color: #576F72;
      color: white;
      padding: 10px 15px;
+     align-content: center;
      border: none;
      border-radius: 4px;
      cursor: pointer;
      margin-top: 50px;
      text-decoration: none;
    }
-  @media only screen and (max-width: 400px){
+  @media only screen and (max-width: 600px){
       
     body {
-    margin: 0;
     padding: 0;
+    margin: 0;
+
     }
     .kotak {
-        width : 100%;
-        padding : 0px;
+    padding : 0px;
+    width : 100%;
+
     }
-     
+}
     
    </style>
-
-
+<form>
   <div class = "kotak">
-        <img src="../ikmi.jpeg" alt="kop" width="100%" height="7%">
-        <hr>
+        <img src="ikmi.jpeg" alt="kop" width="100%">
         <h3>Formulir Pendaftaran Mahasiswa Baru</h3>
         <h4>Petunjuk Pengisian:</h4>
         <ol>
@@ -70,20 +70,19 @@ h3 {
           <li>Salah penulisan pada pengisian formulir ini akan berakibat kesalahan pada penulisan data Saudara pada ijazah
           </li>
         </ol>
-        <form>
-          <fieldset>
+        <form><hr>
             <legend><strong> DATA PMB </strong></legend>
-      <table>
+      <table style="width: 100% ;">
         <tr>
           <td>1.</td>
           <td>Nomor Pendaftaran</td>
           <td>:</td>
-          <td><input type="text" name="no_daftar"></td></tr>
+          <td><input type="text" name="no_daftar" style="width:85% ;"></td></tr>
         <tr>
           <td>2.</td>
           <td>Nama</td>
           <td>:</td>
-          <td><input type="text" name="nama"></td></tr>
+          <td><input type="text" name="nama" style="width:85% ;"></td></tr>
         <tr>
           <td>3.</td>
           <td>Tanggal Ujian</td>
@@ -103,7 +102,7 @@ h3 {
           <td>Jenjang/Jurusan yang dipilih *)</td>
           <td>:</td>
           <td>
-          <table border="1">
+          <table border="1" style="width: 100% ;">
           <thead>
           <tr>
           <th rowspan="2">JENJANG</th>
@@ -206,63 +205,62 @@ h3 {
                     id="tunai"
                     name="sistem_pembayaran"
                     value="tunai">
-                  <label for="tunai">Tunai</label></td></tr></table>
-                  </fieldset>
-          <fieldset>
+                  <label for="tunai">Tunai</label></td></tr></table></fieldset><br></form>
+          <hr><form>
             <legend><strong>DATA PRIBADI</strong></legend>
-            <table>
+            <table style="width:100% ;">
           <tr>
                 <td>6.</td>
                 <td>Agama</td>
                 <td>:</td>
-                <td><input type="text" name="agama"></td></tr>
+                <td><input type="text" name="agama" style="width:85% ;"></td></tr>
           <tr>
                 <td>7.</td>
                 <td>Tempat</td>
                 <td>:</td>
-                <td><input type="text" name="tempat_lahir" /></td></tr>
+                <td><input type="text" name="tempat_lahir" style="width:85% ;"></td></tr>
           <tr>
                 <td></td>
                 <td>Tanggal Lahir</td>
                 <td>:</td>
-                <td><input type="date" name="tanggal_lahir" /></td></tr>
+                <td><input type="date" name="tanggal_lahir"></td></tr>
             <tr>
                 <td>8.</td>
                 <td>Alamat dan No. Rumah</td>
                 <td>:</td>
-                <td><textarea name="alamat"></textarea></td>
+                <td><textarea name="alamat" style="width:85% ;"></textarea></td>
               </tr>
               <tr>
                 <th></th>
                 <td>RT/RW</td>
                 <td>:</td>
-                <td><input type="text" name="rt/rw" /></td>
+                <td><input type="text" name="rt/rw" style="width:85% ;"></td>
               </tr>
               <tr>
                 <th></th>
                 <td>Kota</td>
                 <td>:</td>
-                <td><input type="text" name="kota" /></td>
+                <td><input type="text" name="kota" style="width:85% ;"></td>
               </tr>
               <tr>
                 <th></th>
                 <td>Kode Pos</td>
                 <td>:</td>
-                <td><input type="text" name="kode_pos" /></td>
+                <td><input type="text" name="kode_pos" style="width:85% ;"></td>
               </tr>
               <tr>
                 <td>9.</td>
                 <td>Nomor Telepon Rumah / HP</td>
                 <td>:</td>
-                <td><input type="text" name="no_telp" /></td>
+                <td><input type="text" name="no_telp" style="width:85% ;"></td>
               </tr>
               <tr>
                 <td>10.</td>
                 <td>Kewarganegaraan</td>
                 <td>:</td>
-                <td> <input type="radio" name="kewarganegaraan" value="WNI" id="wni" />
+                <td> <input type="radio" name="kewarganegaraan" value="WNI" id="wni" >
                   <label for="wni">WNI</label>
-                  <input type="radio" name="kewarganegaraan" value="WNA" id="wna" />
+                  <input type="radio" name="kewarganegaraan" value="WNA" id="wna" >
                   <label for="wna">WNA</label>
                   &nbsp;
                   <label for="gol_darah">Gol Darah :</label>
@@ -276,11 +274,11 @@ h3 {
                 <td>11.</td>
                 <td>Nama Orang tua / Wali</td>
                 <td>:</td>
-                <td><input type="text" name="namaortuwali"/>
+                <td><input type="text" name="namaortuwali">
                 </td>
               </tr>
               <tr>
-                <th></th>
+                <td>12.</td>
                 <td>Pekerjaan</td>
                 <td>:</td>
                 <td><input type="radio" name="pekerjaan" id="pns"><label for="pns">PNS/TNI/POLRI</label>
@@ -291,73 +289,68 @@ h3 {
               </tr>
             </table>
           </fieldset>
-          <fieldset>
+          <form><hr>
             <legend><strong>PENDIDIKAN TERAKHIR</strong></legend>
-            <table>
-              <tr>
-                <td>12.</td>
+            <table style="width:100%">
+              <tr><td>13.</td>
                 <td>Asal SMA/SMK/Perguruan Tinggi</td>
                 <td>:</td>
                 <td>
-                  <input type="text" name="asal_sekolah"/>
+                  <input type="text" name="asal_sekolah" style="width:85% ;">
                 </td>
               </tr>
               <tr>
-                <th></th>
+                <td>14.</td>
                 <td>Status Sekolah/Perguruan Tinggi</td>
                 <td>:</td>
-                <td><input type="radio" name="pendidikan" id="negri"><label for="sd">Negri</label>
-                    <input type="radio" name="pendidikan" id="swasta"><label for="swasta">Swasta</label>
+                <td><input type="radio" name="pendidikan" id="negri"><label for="sd">Negri</label><br>
+                    <input type="radio" name="pendidikan" id="swasta"><label for="swasta">Swasta</label><br>
                     <input type="radio" name="pendidikan" id="luarnegri"><label for="luarnegri">Luar Negri</label>
                 </td>
               </tr>
               <tr>
-                <th></th>
+                <td>15.</td>
                 <td>Jurusan</td>
                 <td>:</td>
-                <td><input type="text" name="jurusan"/></td>
+                <td><input type="text" name="jurusan"style="width:85% ;"></td>
               </tr>
               <tr>
-                <th></th>
+                <td>16.</td>
                 <td>Nomor Ijazah SMA/SMK/Diploma III/S1</td>
                 <td>:</td>
                 <td>
-                  <input type="text" name="jurusan"/>
+                  <input type="text" name="noijasah" style="width:85% ;">
                 </td>
               </tr>
               <tr>
-                <th></th>
+                <td>17.</td>
                 <td>Tanggal Lulus</td>
                 <td>:</td>
-                <td><input type="text" name="tgllulus" /></td>
+                <td><input type="text" name="tgllulus" style="width:85% ;"></td>
               </tr>
           <tr>
-                <th></th>
+                <td>18.</td>
                 <td>Nilai NEM STTB/Indek Prestasi Komulatif (IPK)</td>
                 <td>:</td>
-                <td><input type="text" name="nilaiipk" /></td>
+                <td><input type="text" name="nilaiipk" style="width:85% ;"></td>
               </tr>
-            </table>
+            </form>
+        </table>
           </fieldset>
-          <div style="text-align: right;">
-        <tbody>
-          <br>
+          <table width="100%">
         <tr>
+          <hr>
+            <td width="75%"></td>
           <td>Cirebon, <input type="date" name="tgl-ttd"></td>
+        </tr><tr></tr>
+            <tr>
+                <td width="75%"></td>
+          <td width="85%"><input type="text" name="" placeholder="Nama Lengkap"></td>
         </tr>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <tr>
-          <td><input type="text" name="" placeholder="Nama Lengkap"></td>
-        </tr>
-        <br>
-      </tbody>
+    </table>
+      </form>
       <br>
         <button onclick="alert('Belum bisa guysss wkwk')" class="tombol"> Submit </button>
-    </div></form></div>
+    </div>
 </body>
-
 </html>
